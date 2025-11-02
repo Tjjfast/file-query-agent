@@ -6,6 +6,7 @@ from agno.knowledge.embedder.google import GeminiEmbedder
 from agno.knowledge.reader.pdf_reader import PDFReader
 from agno.knowledge.reader.text_reader import TextReader
 from agno.knowledge.reader.csv_reader import CSVReader
+from agno.knowledge.reader.docx_reader import DocxReader
 from agno.knowledge.chunking.fixed import FixedSizeChunking
 from agno.models.google import Gemini
 import base64
@@ -115,7 +116,7 @@ async def process_document_async(file_path: str):
         
         file_ext = Path(file_path).suffix.lower()
         
-        if file_ext in ['.pdf', '.doc', '.docx']:
+        if file_ext == '.pdf':
             reader = PDFReader(
                 name=f"Reader-{file_name}",
                 chunking_strategy=FixedSizeChunking(
@@ -137,6 +138,14 @@ async def process_document_async(file_path: str):
                 chunking_strategy=FixedSizeChunking(
                     chunk_size=1000,
                     overlap=200
+                )
+            )
+        elif file_ext in ['.doc', '.docx']:
+            reader = DocxReader(
+                name=f"Reader-{file_name}",
+                chunking_strategy=FixedSizeChunking(
+                    chunk_size=3000,
+                    overlap=400
                 )
             )
         else:
