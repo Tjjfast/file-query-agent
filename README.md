@@ -2,8 +2,9 @@
 
 A full-stack application for managing and querying documents in a knowledge base, featuring file uploads, document processing, and semantic search capabilities.
 
-## Features
+<img width="1776" height="901" alt="Image" src="https://github.com/user-attachments/assets/76256179-f28f-40c7-a4f6-9bf7c4bd9dc8" />
 
+## Features
 - **Multi-format Support**: Upload and process PDF, DOCX, DOC, TXT, and CSV files
 - **Document Chunking**: Intelligent document splitting with configurable chunk sizes
 - **Vector Embeddings**: Utilizes Gemini for generating document embeddings
@@ -38,6 +39,20 @@ A full-stack application for managing and querying documents in a knowledge base
 - Langfuse account (optional)
 
 ## Setup
+
+### Demo
+
+Upload Files using the upload button :
+
+<img width="761" height="448" alt="Image" src="https://github.com/user-attachments/assets/bff1a035-2d79-4f84-903a-32c7ecee4e33" />
+
+Query the agent regarding that file :
+
+<img width="627" height="396" alt="Image" src="https://github.com/user-attachments/assets/ebdf4242-f2f5-4429-9def-2c3a13776698" />
+
+Trace the agent's activity on Langfuse :
+
+<img width="1902" height="871" alt="Image" src="https://github.com/user-attachments/assets/2ee56e83-e5ab-4ebe-8fc8-0647137ad1e7" />
 
 ### Backend Setup
 
